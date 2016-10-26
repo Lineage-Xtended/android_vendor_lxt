@@ -223,6 +223,10 @@ else
     CM_VERSION_MAINTENANCE := 0
 endif
 
+# Adaway
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/Adaway/Adaway.apk:system/app/Adaway/Adaway.apk
+
 # Set CM_BUILDTYPE from the env RELEASE_TYPE, for jenkins compat
 
 ifndef CM_BUILDTYPE

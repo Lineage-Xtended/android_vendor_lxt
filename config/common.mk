@@ -1,3 +1,6 @@
+
+
+
 PRODUCT_BRAND ?= cyanogenmod
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
@@ -35,6 +38,14 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/cm/CHANGELOG.mkdn:system/etc/CHANGELOG-CM.txt
 
+# NexusLauncher
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/NexusLauncher/NexusLauncher.apk:system/app/NexusLauncher/NexusLauncher.apk
+
+# Wallpaper
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/Wallpaper/Wallpaper.apk:system/app/Wallpaper/Wallpaper.apk
+   
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
@@ -210,6 +221,9 @@ PRODUCT_PACKAGES += \
     procrank \
     su
 endif
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.root_access=1
 
 DEVICE_PACKAGE_OVERLAYS += vendor/cm/overlay/common
 
